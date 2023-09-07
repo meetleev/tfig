@@ -51,7 +51,7 @@ npm install -g tfig
 Compile your TypeScript project, make sure to let tsc generate a single declaration file. eg. Have the option `outFile` in `tsconfig.json`:
 ```json
 {
-    outFile: "out.js",
+    "outFile": "out.js"
 }
 ```
 
