@@ -285,8 +285,7 @@ function recastTopLevelModule({ program, typeChecker, rModule, nameResolver, exp
         recastTypeNode(methodSignature.type)));
     }
     function recastIndexSignatureDeclaration(indexSignature) {
-        return copyComments(indexSignature, nodeFactor.createIndexSignature(undefined, // decorators
-        recastModifiers(indexSignature.modifiers), // modifiers
+        return copyComments(indexSignature, nodeFactor.createIndexSignature(recastModifiers(indexSignature.modifiers), // modifiers
         recastParameterArray(indexSignature.parameters), // parameters
         recastTypeNode(indexSignature.type) || nodeFactor.createKeywordTypeNode(typescript_1.default.SyntaxKind.UndefinedKeyword)));
     }

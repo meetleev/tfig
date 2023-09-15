@@ -31,7 +31,7 @@ export interface IOptions {
          */
         targetModule: string;
     }>;
-    nonExportedThirdLibs?: Array<string>;
+    nonExportedExternalLibs?: Array<string>;
 }
 export interface IBundleResult {
     groups: GroupResult[];

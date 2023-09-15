@@ -47,7 +47,7 @@ export interface IOptions {
         targetModule: string;
     }>;
 
-    nonExportedThirdLibs?: Array<string>;
+    nonExportedExternalLibs?: Array<string>;
 }
 
 export interface IBundleResult {
@@ -297,8 +297,8 @@ export function rollupTypes(options: IOptions) {
                 referencingNamespaceInSource = referencingNamespaceInSource.entity.parent.entity.namespaceTraits!;
             }
             let rootModuleName = getModuleRootName(symbol);
-            const {nonExportedThirdLibs} = options;
-            let bNonExportLib = undefined != nonExportedThirdLibs ? -1 != nonExportedThirdLibs?.indexOf(rootModuleName) : false;
+            const {nonExportedExternalLibs} = options;
+            let bNonExportLib = undefined != nonExportedExternalLibs ? -1 != nonExportedExternalLibs?.indexOf(rootModuleName) : false;
             const neNamespace = decideNeNamespaceForNonExportedSymbol(symbol, referencingNamespaceInSource);
             const names = generateUniqueName(symbol, bNonExportLib ? '' : '_');
             let name: string;

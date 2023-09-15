@@ -382,7 +382,6 @@ export function recastTopLevelModule({
 
     function recastIndexSignatureDeclaration(indexSignature: ts.IndexSignatureDeclaration) {
         return copyComments(indexSignature, nodeFactor.createIndexSignature(
-            undefined, // decorators
             recastModifiers(indexSignature.modifiers), // modifiers
             recastParameterArray(indexSignature.parameters), // parameters
             recastTypeNode(indexSignature.type) || nodeFactor.createKeywordTypeNode(ts.SyntaxKind.UndefinedKeyword), // type
